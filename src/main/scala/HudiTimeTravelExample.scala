@@ -33,5 +33,15 @@ object HudiTimeTravelExample extends App with SparkHudiBase {
 
   df.show()
 
+  //+-------------------+--------------------+------------------+----------------------+--------------------+---+----------+-----+-------+
+  //|_hoodie_commit_time|_hoodie_commit_seqno|_hoodie_record_key|_hoodie_partition_path|   _hoodie_file_name| id| partition|value|version|
+  //+-------------------+--------------------+------------------+----------------------+--------------------+---+----------+-----+-------+
+  //|     20220526114900|  20220526114900_0_1|                 1|  partition=partition1|7f31f42a-a1d7-45d...|  1|partition1|  {0}|      1|
+  //|     20220526114900|  20220526114900_0_2|                 2|  partition=partition1|7f31f42a-a1d7-45d...|  2|partition1|  {0}|      1|
+  //|     20220526114905|  20220526114905_0_3|                 3|  partition=partition1|7f31f42a-a1d7-45d...|  3|partition1|  {1}|      1|
+  //|     20220526114905|  20220526114905_0_4|                 4|  partition=partition1|7f31f42a-a1d7-45d...|  4|partition1|  {1}|      1|
+  //+-------------------+--------------------+------------------+----------------------+--------------------+---+----------+-----+-------+
+
   assert(df.count() == 2, "Only the 1st commit should be returned")
+
 }
