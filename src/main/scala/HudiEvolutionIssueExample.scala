@@ -62,7 +62,7 @@ object HudiEvolutionIssueExample extends App with SparkHudiBase {
   df.printSchema()
   df.show()
 
-  // For 0.9.0 version and Spark 3.1.2 - throws an exception at df.show()
+  // For 0.9.0 version and Spark 3.1.2 - works correctly
   // +-------------------+--------------------+------------------+----------------------+--------------------+---+----------+-----+------+------+-------+
   //|_hoodie_commit_time|_hoodie_commit_seqno|_hoodie_record_key|_hoodie_partition_path|   _hoodie_file_name| id| partition|value|value2|value3|version|
   //+-------------------+--------------------+------------------+----------------------+--------------------+---+----------+-----+------+------+-------+
