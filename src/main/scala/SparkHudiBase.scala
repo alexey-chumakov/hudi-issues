@@ -41,8 +41,13 @@ trait SparkHudiBase {
       .option("hoodie.datasource.write.hive_style_partitioning", "true")
       .option("hoodie.finalize.write.parallelism", "2")
       .option("hoodie.upsert.shuffle.parallelism", "2")
+      .options(additionalHudiOptions)
       .mode(SaveMode.Append)
       .save(tempPath)
+  }
+
+  protected def additionalHudiOptions: Map[String, String] = {
+    Map.empty
   }
 
   private def createDataFrame(data: Seq[String]): DataFrame = {

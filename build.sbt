@@ -2,12 +2,12 @@ name := "hudi-issues"
 
 version := "0.1"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.12.14"
 
 idePackagePrefix := Some("hudi.issue.example")
 
-val Spark = "3.1.2"
-val Hudi = "0.9.0"
+val Spark = "3.2.1"
+val Hudi = "0.11.0"
 val Logging = "3.9.4"
 
 libraryDependencies ++= Seq(
@@ -18,4 +18,4 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-hive" % Spark
 )
 
-Compile / run / mainClass := Some("com.example.hudi.HudiTimeTravelExample")
+Compile / run / mainClass := Some("hudi.issue.example.aws.GlueSyncIssueExample")
