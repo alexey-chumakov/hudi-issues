@@ -2,12 +2,12 @@ name := "hudi-issues"
 
 version := "0.1"
 
-scalaVersion := "2.12.14"
+scalaVersion := "2.12.10"
 
 idePackagePrefix := Some("hudi.issue.example")
 
-val Spark = "3.2.1"
-val Hudi = "0.11.0"
+val Spark = "3.3.0"
+val Hudi = "0.12.1"
 val Logging = "3.9.4"
 
 libraryDependencies ++= Seq(
